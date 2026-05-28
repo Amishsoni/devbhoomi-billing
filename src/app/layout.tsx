@@ -9,11 +9,24 @@ import '@/app/globals.css'
 
 // Generated Icon CSS Imports
 import '@assets/iconify-icons/generated-icons.css'
+import ProviderWrapper from '@/components/ProviderWrapper'
 
 export const metadata = {
-  title: 'Materio - Material Design Next.js Admin Template',
+  title: 'Devbhoomi Kapdewale Billing Portal',
   description:
-    'Materio - Material Design Next.js Admin Dashboard Template - is the most developer friendly & highly customizable Admin Dashboard Template based on MUI v5.'
+    'Devbhoomi Kapdewale Billing Portal is a platform for managing the billing of the Devbhoomi Kapdewale.',
+  icons: {
+    icon: '/favicon.ico',
+    apple: '/apple-touch-icon.png'
+  },
+  manifest: '/site.webmanifest',
+  themeColor: '#000000',
+  viewport: {
+    width: 'device-width',
+    initialScale: 1,
+    maximumScale: 1,
+    userScalable: false
+  }
 }
 
 const RootLayout = ({ children }: ChildrenType) => {
@@ -22,7 +35,11 @@ const RootLayout = ({ children }: ChildrenType) => {
 
   return (
     <html id='__next' lang='en' dir={direction}>
-      <body className='flex is-full min-bs-full flex-auto flex-col'>{children}</body>
+      <body className='flex is-full min-bs-full flex-auto flex-col'>
+        <ProviderWrapper>
+          {children}
+        </ProviderWrapper>
+      </body>
     </html>
   )
 }
